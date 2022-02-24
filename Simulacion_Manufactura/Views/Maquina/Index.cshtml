@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Simulacion_Manufactura.Models.Maquina>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadProdHoras)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostoHora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProbabilidadFallo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorasMantenimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadProdHoras)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostoHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProbabilidadFallo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorasMantenimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", item) |
+                @Html.ActionLink("Delete", "Delete", item)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

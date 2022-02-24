@@ -9,7 +9,7 @@ namespace Simulacion_Manufactura.Models
     public interface ICosmosDBServiceProducto
     {
         Task<IEnumerable<Producto>> GetProductosAsync(string query);
-        Task<Producto> GetIProductoAsync(string id);
+        Task<Producto> GetProductoAsync(string id);
         Task AddProductoAsync(Producto item);
         Task UpdateProductoAsync(string id, Producto item);
         Task DeleteProductoAsync(string id);
@@ -32,7 +32,7 @@ namespace Simulacion_Manufactura.Models
             await this._container.DeleteItemAsync<Producto>(id, new PartitionKey(id));
         }
 
-        public async Task<Producto> GetIProductoAsync(string id)
+        public async Task<Producto> GetProductoAsync(string id)
         {
             try
             {

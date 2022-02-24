@@ -1,0 +1,63 @@
+﻿@model Simulacion_Manufactura.Models.Maquina
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Maquina</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateMaquina">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="CantidadProdHoras" class="control-label"></label>
+                <input asp-for="CantidadProdHoras" class="form-control" />
+                <span asp-validation-for="CantidadProdHoras" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CostoHora" class="control-label"></label>
+                <input asp-for="CostoHora" class="form-control" />
+                <span asp-validation-for="CostoHora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProbabilidadFallo" class="control-label"></label>
+                <input asp-for="ProbabilidadFallo" class="form-control" />
+                <span asp-validation-for="ProbabilidadFallo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorasMantenimiento" class="control-label"></label>
+                <input asp-for="HorasMantenimiento" class="form-control" />
+                <span asp-validation-for="HorasMantenimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaCompra" class="control-label"></label>
+                <input asp-for="FechaCompra" class="form-control" />
+                <span asp-validation-for="FechaCompra" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
