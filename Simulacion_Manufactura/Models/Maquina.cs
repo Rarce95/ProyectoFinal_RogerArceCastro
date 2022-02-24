@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,9 +8,26 @@ namespace Simulacion_Manufactura.Models
 {
     public class Maquina
     {
-        public string id { get; set; }
-        public int cantProdHoras { get; set; }
-        public decimal costoHora { get; set; }
-        public decimal probabilidadFallo { get; set; }
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; set; }
+
+        [JsonProperty(PropertyName = "cantidadProdHoras")]
+        public int CantidadProdHoras { get; set; }
+
+        [JsonProperty(PropertyName = "costoHora")]
+        public decimal CostoHora { get; set; }
+
+        [JsonProperty(PropertyName = "probabilidadFallo")]
+        public decimal ProbabilidadFallo { get; set; }
+
+        [JsonProperty(PropertyName = "horasMantenimiento")]
+        public int HorasMantenimiento { get; set; }
+
+        [JsonProperty(PropertyName = "fechaCompra")]
+        public DateTime FechaCompra { get; set; }
+
+        [JsonProperty(PropertyName = "estado")]
+        public bool Estado { get; set; }
     }
 }
+
