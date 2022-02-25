@@ -11,14 +11,17 @@ namespace Simulacion_Manufactura.Models
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
 
+        [JsonProperty(PropertyName = "nombre")]
+        public string Nombre { get; set; }
+
         [JsonProperty(PropertyName = "cantidadProdHoras")]
         public int CantidadProdHoras { get; set; }
 
         [JsonProperty(PropertyName = "costoHora")]
-        public decimal CostoHora { get; set; }
+        public double CostoHora { get; set; }
 
         [JsonProperty(PropertyName = "probabilidadFallo")]
-        public decimal ProbabilidadFallo { get; set; }
+        public double ProbabilidadFallo { get; set; }
 
         [JsonProperty(PropertyName = "horasMantenimiento")]
         public int HorasMantenimiento { get; set; }

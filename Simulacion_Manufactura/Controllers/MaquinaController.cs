@@ -28,7 +28,9 @@ namespace Simulacion_Manufactura.Controllers
 
         public async Task<ActionResult> CreateMaquina(Maquina maquina)
         {
+            Random random = new Random();
             maquina.Id = Guid.NewGuid().ToString();
+            maquina.ProbabilidadFallo = random.Next(0, 11) / 10;
             await _cosmosDB.AddMaquinaAsync(maquina);
             return RedirectToAction("Index");
         }

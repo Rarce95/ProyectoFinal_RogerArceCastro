@@ -15,6 +15,6 @@ namespace Simulacion_Manufactura.Models
         public string Nombre { get; set; }
 
         [JsonProperty(PropertyName = "precio")]
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
     }
 }

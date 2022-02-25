@@ -32,6 +32,7 @@
     </dl>
     
     <form asp-action="DeleteProduct">
+        <input asp-for="Id" class="form-control d-none" readonly />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>
