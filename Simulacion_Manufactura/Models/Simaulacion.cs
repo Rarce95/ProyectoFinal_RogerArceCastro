@@ -12,12 +12,24 @@ namespace Simulacion_Manufactura.Models
         public string Id { get; set; }
 
         [JsonProperty(PropertyName = "cantHoras")]
-        public string CantidadHoras { get; set; }
+        public int CantidadHoras { get; set; }
 
-        [JsonProperty(PropertyName = "cantProduccionHorasDia")]
+        [JsonProperty(PropertyName = "cantidadDias")]
+        public int CantidadDias { get; set; }
+
+        [JsonProperty(PropertyName = "cantidadMeses")] 
+        public int CantidadMeses { get; set; }
+
+        [JsonProperty(PropertyName = "idProducto")]
+        public string IdProducto { get; set; }
+
+        [JsonProperty(PropertyName = "precioFabricacionProducto")]
+        public double PrecioFabricacionProducto { get; set; }
+
+        [JsonProperty(PropertyName = "cantProduccionHorasDia")] //Cantidad_horas_produccion_diaria
         public int CantProduccionHorasDia { get; set; }
 
-        [JsonProperty(PropertyName = "cantProductosDia")]
+        [JsonProperty(PropertyName = "cantProductosDiaXSemana")] //Cantidad_dias_produccion_semanal
         public int cantProductosDia { get; set; }
 
         [JsonProperty(PropertyName = "idMaquina1")]
@@ -43,6 +55,9 @@ namespace Simulacion_Manufactura.Models
 
         [JsonProperty(PropertyName = "gananciaBrutoMaquina2")]
         public double GananciaBrutoMaquina2 { get; set; }
+
+        [JsonProperty(PropertyName = "maquinaRecomnedada")]
+        public string MaquinaRecomnedada { get; set; }
 
     }
 }

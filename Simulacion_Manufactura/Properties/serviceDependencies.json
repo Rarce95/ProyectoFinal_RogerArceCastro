@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "cosmosdb1": {
+      "type": "cosmosdb",
+      "connectionId": "AccountEndpoint=https://proyectobdra.documents.azure.com:443/;AccountKey=Yj0UScXJsyskR75vQMkG1qXda7ICX56KzmbME4G37cxGep5LBfPnepjLdBHkyQj7R7Q3E8E6G4oKBO3M8EeinQ==;"
+    }
+  }
+}

@@ -8,81 +8,111 @@
 
 <h4>Simaulacion</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="CreateSimulacion">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @*<div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>*@
-            <div class="form-group">
-                <label asp-for="CantidadHoras" class="control-label"></label>
-                <input asp-for="CantidadHoras" class="form-control" />
-                <span asp-validation-for="CantidadHoras" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CantProduccionHorasDia" class="control-label"></label>
-                <input asp-for="CantProduccionHorasDia" class="form-control" />
-                <span asp-validation-for="CantProduccionHorasDia" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cantProductosDia" class="control-label"></label>
-                <input asp-for="cantProductosDia" class="form-control" />
-                <span asp-validation-for="cantProductosDia" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdMaquina1" class="control-label"></label>
-                <input asp-for="IdMaquina1" class="form-control" />
-                <span asp-validation-for="IdMaquina1" class="text-danger"></span>
-            </div>
-            @*<div class="form-group">
-                <label asp-for="ProductoHoraMaquina1" class="control-label"></label>
-                <input asp-for="ProductoHoraMaquina1" class="form-control" />
-                <span asp-validation-for="ProductoHoraMaquina1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GananciaRealMaquina1" class="control-label"></label>
-                <input asp-for="GananciaRealMaquina1" class="form-control" />
-                <span asp-validation-for="GananciaRealMaquina1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GananciaBrutoMaquina1" class="control-label"></label>
-                <input asp-for="GananciaBrutoMaquina1" class="form-control" />
-                <span asp-validation-for="GananciaBrutoMaquina1" class="text-danger"></span>
-            </div>*@
-            <div class="form-group">
-                <label asp-for="IdMaquina2" class="control-label"></label>
-                <input asp-for="IdMaquina2" class="form-control" />
-                <span asp-validation-for="IdMaquina2" class="text-danger"></span>
-            </div>
-            @*<div class="form-group">
-                <label asp-for="ProductoHoraMaquina2" class="control-label"></label>
-                <input asp-for="ProductoHoraMaquina2" class="form-control" />
-                <span asp-validation-for="ProductoHoraMaquina2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GananciaRealMaquina2" class="control-label"></label>
-                <input asp-for="GananciaRealMaquina2" class="form-control" />
-                <span asp-validation-for="GananciaRealMaquina2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GananciaBrutoMaquina2" class="control-label"></label>
-                <input asp-for="GananciaBrutoMaquina2" class="form-control" />
-                <span asp-validation-for="GananciaBrutoMaquina2" class="text-danger"></span>
-            </div>*@
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="row">
+        <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-action="Details">Reporte de la ultima Simulacion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Back to Home</a>
+            </li>
+        </ul>
     </div>
-</div>
+</nav>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreateSimulacion">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<div class="form-group">
+                        <label asp-for="Id" class="control-label"></label>
+                        <input asp-for="Id" class="form-control" />
+                        <span asp-validation-for="Id" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+                    <label asp-for="CantidadHoras" class="control-label"></label>
+                    <input asp-for="CantidadHoras" class="form-control" />
+                    <span asp-validation-for="CantidadHoras" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CantidadDias" class="control-label"></label>
+                    <input asp-for="CantidadDias" class="form-control" />
+                    <span asp-validation-for="CantidadDias" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CantidadMeses" class="control-label"></label>
+                    <input asp-for="CantidadMeses" class="form-control" />
+                    <span asp-validation-for="CantidadMeses" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IdProducto" class="control-label"></label>
+                    <select asp-for="IdProducto" class="form-control" asp-items="@(new SelectList(ViewBag.ListaProductos,"Value","Text"))"></select>
+                    <span asp-validation-for="IdProducto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PrecioFabricacionProducto" class="control-label"></label>
+                    <input asp-for="PrecioFabricacionProducto" class="form-control" />
+                    <span asp-validation-for="PrecioFabricacionProducto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CantProduccionHorasDia" class="control-label"></label>
+                    <input asp-for="CantProduccionHorasDia" class="form-control" />
+                    <span asp-validation-for="CantProduccionHorasDia" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="cantProductosDia" class="control-label"></label>
+                    <input asp-for="cantProductosDia" class="form-control" />
+                    <span asp-validation-for="cantProductosDia" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IdMaquina1" class="control-label"></label>
+                    <select asp-for="IdMaquina1" class="form-control" asp-items="@(new SelectList(ViewBag.ListaMaquinas,"Value","Text"))"></select>
+                    <span asp-validation-for="IdMaquina1" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                        <label asp-for="ProductoHoraMaquina1" class="control-label"></label>
+                        <input asp-for="ProductoHoraMaquina1" class="form-control" />
+                        <span asp-validation-for="ProductoHoraMaquina1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="GananciaRealMaquina1" class="control-label"></label>
+                        <input asp-for="GananciaRealMaquina1" class="form-control" />
+                        <span asp-validation-for="GananciaRealMaquina1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="GananciaBrutoMaquina1" class="control-label"></label>
+                        <input asp-for="GananciaBrutoMaquina1" class="form-control" />
+                        <span asp-validation-for="GananciaBrutoMaquina1" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+                    <label asp-for="IdMaquina2" class="control-label"></label>
+                    <select asp-for="IdMaquina2" class="form-control" asp-items="@(new SelectList(ViewBag.ListaMaquinas,"Value","Text"))"></select>
+                    <span asp-validation-for="IdMaquina2" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                        <label asp-for="ProductoHoraMaquina2" class="control-label"></label>
+                        <input asp-for="ProductoHoraMaquina2" class="form-control" />
+                        <span asp-validation-for="ProductoHoraMaquina2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="GananciaRealMaquina2" class="control-label"></label>
+                        <input asp-for="GananciaRealMaquina2" class="form-control" />
+                        <span asp-validation-for="GananciaRealMaquina2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="GananciaBrutoMaquina2" class="control-label"></label>
+                        <input asp-for="GananciaBrutoMaquina2" class="form-control" />
+                        <span asp-validation-for="GananciaBrutoMaquina2" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

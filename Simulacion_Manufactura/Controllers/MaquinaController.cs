@@ -30,7 +30,7 @@ namespace Simulacion_Manufactura.Controllers
         {
             Random random = new Random();
             maquina.Id = Guid.NewGuid().ToString();
-            maquina.ProbabilidadFallo = random.Next(0, 11) / 10;
+            maquina.ProbabilidadFallo = random.Next(0, 11) / 10.00;
             await _cosmosDB.AddMaquinaAsync(maquina);
             return RedirectToAction("Index");
         }
@@ -43,7 +43,7 @@ namespace Simulacion_Manufactura.Controllers
         public async Task<ActionResult> EditMaquina(Maquina maquina)
         {
             await _cosmosDB.UpdateMaquinaAsync(maquina.Id, maquina);
-            return RedirectToAction("Producto");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Delete(Maquina maquina)
@@ -54,7 +54,7 @@ namespace Simulacion_Manufactura.Controllers
         public async Task<ActionResult> DeleteMaquina(Maquina maquina)
         {
             await _cosmosDB.DeleteMaquinaAsync(maquina.Id);
-            return RedirectToAction("Producto");
+            return RedirectToAction("Index");
         }
 
     }
