@@ -26,10 +26,10 @@ namespace Simulacion_Manufactura.Models
         [JsonProperty(PropertyName = "precioFabricacionProducto")]
         public double PrecioFabricacionProducto { get; set; }
 
-        [JsonProperty(PropertyName = "cantProduccionHorasDia")] //Cantidad_horas_produccion_diaria
+        [JsonProperty(PropertyName = "cantProduccionHorasDia")] 
         public int CantProduccionHorasDia { get; set; }
 
-        [JsonProperty(PropertyName = "cantProductosDiaXSemana")] //Cantidad_dias_produccion_semanal
+        [JsonProperty(PropertyName = "cantProductosDiaXSemana")]
         public int cantProductosDia { get; set; }
 
         [JsonProperty(PropertyName = "idMaquina1")]
